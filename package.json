@@ -11,5 +11,8 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "mocha": "~2.2.4"
+  },
+  "dependencies": {
+    "superagent": "^1.2.0"
   }
 }
