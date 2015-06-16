@@ -1,33 +1,13 @@
 var assert = require('assert');
-var http = require('http');
 var superagent = require('superagent');
+var server = require('../server');
 
 // Our basic server
-var server;
-var serverPath = "http://localhost:7500";
+var port = 7500;
+var serverPath = "http://localhost:" + port;
 
 before(function(done) {
-  server = http.createServer(function(request, response) {
-    
-    var statusCode;
-    var responseText;
-
-    if (request.url !== '/') {
-      statusCode = 404;
-      responseText = 'Sorry, your request is bogus.';
-    } else {
-      statusCode = 200;
-      responseText = 'Hello, Node!';
-    }
-
-    response.writeHead(statusCode, {
-      'content-type': 'text/plain' 
-    });
-    response.write(responseText);
-
-    response.end();
-  });
-  server.listen(7500);
+  server.listen(port);
   done();
 });
 
