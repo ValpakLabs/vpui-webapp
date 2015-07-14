@@ -1,0 +1,1 @@
+export default 'http://www.reddit.com/r/perfectloops/top.json?sort=top&t=week';
